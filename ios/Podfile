@@ -12,6 +12,7 @@ target 'atomicTest' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
+
   target 'atomicTestTests' do
     inherit! :complete
     # Pods for testing
