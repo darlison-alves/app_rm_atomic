@@ -1,8 +1,10 @@
+import { colors } from "../defaults/colors";
+
 const { StyleSheet } = require("react-native");
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#6200EE',
+        backgroundColor: colors.main,
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'space-evenly',
