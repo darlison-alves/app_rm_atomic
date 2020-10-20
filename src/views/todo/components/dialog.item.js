@@ -1,23 +1,20 @@
 import React from 'react';
-import { Button, Dialog, Paragraph, Portal } from "react-native-paper";
+import { Button, Dialog, Paragraph, Portal, TextInput } from "react-native-paper";
 
-const DialogItem = ({ visibleprops = false }) => {
-
-    const [visible, setVisible] = React.useState(visibleprops);
-
-    const showDialog = () => setVisible(true);
-    const hideDialog = () => setVisible(false);
-
+const DialogItem = ({ visibleprops = false, onPress }) => {
+    const [text, setText] = React.useState('');
     return(
         <Portal>
-            <Dialog visible={visible} onDismiss={hideDialog} >
+            <Dialog visible={visibleprops} >
                 <Dialog.Title>Novo Item</Dialog.Title>
                 <Dialog.Content>
-
-                    <Paragraph>dwodnwod</Paragraph>
+                    <TextInput label="Descrição" value={text} onChangeText={text => setText(text)} />                    
                 </Dialog.Content>
                 <Dialog.Actions>
-                    <Button onPress={hideDialog} >Salva</Button>
+                    <Button onPress={() => {
+                        onPress(text);
+                        setText('');
+                    } } >Salva</Button>
                 </Dialog.Actions>
             </Dialog>
         </Portal>

@@ -6,10 +6,6 @@ const axios_base = axios.create({
 })
 
 export function login(code) {
-    console.log("dwdw", {
-        ...api_github,
-        code
-    })
     return axios_base.post('/login/oauth/access_token',{}, {
         params: {
             ...api_github,
